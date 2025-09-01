@@ -1,0 +1,10 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+
+.card { @include surface; display: grid; grid-template-rows: 1fr auto; text-decoration: none; color: inherit; }
+.card__media { aspect-ratio: 2 / 3; overflow: hidden; border-top-left-radius: $radius; border-top-right-radius: $radius; }
+.card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__body { padding: .6rem .75rem .9rem; }
+.card__title { margin: 0 0 .25rem; font-size: .95rem; line-height: 1.3; }
+.card__meta { margin: 0; color: #b0b0c0; font-size: .85rem; }

@@ -1,0 +1,16 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+
+.header {
+position: sticky; top: 0; z-index: 10;
+backdrop-filter: blur(6px);
+background: linear-gradient(180deg, rgba(15,15,18,0.9), rgba(15,15,18,0.6));
+border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.header__inner { display: flex; align-items: center; justify-content: space-between; }
+.header__brand { font-weight: 800; color: white; text-decoration: none; font-size: 1.2rem; }
+.header__nav { display: flex; gap: 1rem; align-items: center; }
+.header__nav a { color: #cfcfe8; text-decoration: none; padding: .6rem .8rem; border-radius: 10px; }
+.header__nav a.active, .header__nav a:hover { background: #1e1e25; color: white; }
+.badge { margin-left: .5rem; background: #34343f; }

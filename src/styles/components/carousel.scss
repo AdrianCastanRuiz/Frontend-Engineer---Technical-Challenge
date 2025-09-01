@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+
+.carousel { }
+.carousel__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .5rem; }
+.carousel__header h2 { margin: 0; font-size: 1.25rem; }
+.carousel__controls { display: flex; gap: .5rem; }
+.carousel__controls button { background: #22222a; color: white; border: 1px solid #34343f; border-radius: 10px; padding: .4rem .6rem; cursor: pointer; }
+
+
+.carousel__scroller {
+display: grid; grid-auto-flow: column; grid-auto-columns: 180px; gap: $gap;
+overflow-x: auto; padding-bottom: .5rem; scroll-snap-type: x mandatory;
+}
+.carousel__scroller > * { scroll-snap-align: start; }

@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+margin: 0;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+background: $bg;
+color: $text;
+}
+
+
+.container {
+max-width: $container-max;
+margin: 0 auto;
+padding: 1rem;
+}
+
+
+.app { min-height: 100%; }
+
+
+.stack-lg > * + * { margin-top: 2rem; }
+
+
+// Botones
+.btn { @include button-base; background: #2a2a33; color: $text; }
+.btn--primary { background: var(--accent, #6e56cf); }
+.btn--secondary { background: transparent; border-color: var(--accent, #6e56cf); color: var(--accent, #6e56cf); }
+.btn--ghost { background: transparent; border-color: #3a3a44; color: $text; }
+
+
+.badge {
+display: inline-block;
+font-size: 0.75rem;
+padding: 0.2rem 0.5rem;
+border-radius: 999px;
+background: #2a2a33;
+color: $text;
+}
+.badge--action { background: $color-action; }
+.badge--comedy { background: $color-comedy; color: #1a1a1a; }
+.badge--drama { background: $color-drama; }
+
+
+// Temas por categoría (tipografía + acentos)
+.theme--action { --accent: #{$color-action}; font-family: 'Trebuchet MS', Arial, sans-serif; }
+.theme--comedy { --accent: #{$color-comedy}; font-family: 'Comic Sans MS', 'Segoe UI', sans-serif; }
+.theme--drama { --accent: #{$color-drama}; font-family: Georgia, 'Times New Roman', serif; }
+
+
+.card__placeholder {
+@include surface;
+height: 100%; display: grid; place-items: center; color: $muted;
+}

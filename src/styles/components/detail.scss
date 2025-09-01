@@ -1,0 +1,21 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+
+.detail { }
+.detail__header { display: flex; align-items: center; gap: .75rem; }
+.detail__title { margin: .5rem 0 1rem; font-size: clamp(1.4rem, 3vw, 2rem); }
+
+
+.detail__content { display: grid; gap: 1.2rem; grid-template-columns: 1fr; }
+.detail__poster { max-width: 360px; }
+.detail__poster img { width: 100%; border-radius: $radius; border: 1px solid rgba(255,255,255,0.08); }
+.detail__overview { color: #d4d4e0; line-height: 1.65; }
+.detail__list { list-style: none; padding: 0; margin: .75rem 0; color: #bdbdd2; }
+.detail__list li { margin: .25rem 0; }
+.detail__actions { display: flex; gap: .75rem; margin-top: 1rem; }
+
+
+@media (min-width: 860px) {
+.detail__content { grid-template-columns: 360px 1fr; align-items: start; }
+}
