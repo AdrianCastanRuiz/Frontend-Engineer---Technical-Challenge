@@ -6,7 +6,6 @@ import { expect, it } from 'vitest'
 
 
 it('muestra items de la wishlist', () => {
-// Pre-cargar estado
 useWishlistStore.setState({
 items: [
 { id: 1, title: 'Popular One', poster_path: '/p1.jpg', release_date: '2024-01-01', genre_ids: [28] },

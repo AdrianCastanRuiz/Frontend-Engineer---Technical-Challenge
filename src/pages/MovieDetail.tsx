@@ -10,11 +10,9 @@ import type { MovieDetail, MovieSummary, Genre } from 'src/types/movie'
 import './../styles/components/detail.scss'
 
 export default function MovieDetail() {
-  // Tipar params para evitar string | undefined y facilitar Number()
   const { id } = useParams<{ id: string }>()
   const movieId: number = Number(id)
 
-  // Tipar el dato que devuelve la query
   const { data, isLoading, isError } = useQuery<MovieDetail>({
     queryKey: ['movie', movieId],
     queryFn: () => fetchMovieById(movieId),
@@ -24,7 +22,6 @@ export default function MovieDetail() {
   if (isLoading) return <Spinner />
   if (isError || !data) return <ErrorState />
 
-  // Evitar any implícito en los map: anotar el tipo de g
   const genreIds: number[] = data.genres.map((g: Genre) => g.id)
   const cat = categoryFromGenres(genreIds)
   const themeClass = `theme--${cat}` as const

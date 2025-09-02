@@ -16,7 +16,6 @@ add({ id: 99, title: 'X', poster_path: null, genre_ids: [], release_date: '2020-
 expect(useWishlistStore.getState().items).toHaveLength(1)
 
 
-// evitar duplicados
 add({ id: 99, title: 'X', poster_path: null, genre_ids: [], release_date: '2020-01-01' })
 expect(useWishlistStore.getState().items).toHaveLength(1)
 
